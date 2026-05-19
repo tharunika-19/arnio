@@ -986,6 +986,22 @@ report = ar.profile(df, sample_size=5)
 safe_report = report.to_dict(redact_sample_values=True)
 ```
 
+When `approx_top_values=True`, string columns with high cardinality use a
+deterministic sample to estimate top values. Each column includes
+`top_values_is_approximate`, `top_values_sample_count`, and
+`top_values_sample_ratio`, and the counts/ratios are sample-based.
+
+```python
+# Optional: approximate top values for high-cardinality string columns
+report = ar.profile(
+    df,
+    approx_top_values=True,
+    approx_top_values_min_unique=1000,
+    approx_top_values_min_ratio=0.2,
+    approx_top_values_sample_size=2000,
+)
+```
+
 ### Notebook dashboard (Jupyter / Colab)
 
 `DataQualityReport` includes a notebook-friendly HTML dashboard. In a notebook, simply evaluate `report` in a cell to see a rich, static summary (quality score, duplicates, nulls, warnings, top values, and cleaning suggestions).
