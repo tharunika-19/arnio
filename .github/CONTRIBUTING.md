@@ -106,8 +106,9 @@ def test_remove_special_chars(sample_csv):
 
 ## C++ extension stubs
 
-If you change the C++ pybind11 API, update the type stubs in
-[STUBS_UPDATE.md](../STUBS_UPDATE.md) and keep the Python call sites aligned.
+If you change the C++ pybind11 API, update the stub file at
+[arnio/_arnio_cpp.pyi](../arnio/_arnio_cpp.pyi) and keep the Python call sites
+aligned. See [STUBS_UPDATE.md](../STUBS_UPDATE.md) for the short checklist.
 
 ### Review expectations
 

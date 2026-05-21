@@ -848,7 +848,7 @@ def scan_csv(
             delimiter=delimiter,
             sample_rows=100 if sample_size is None else sample_size,
         ) as native_path:
-            return cast(dict[str, str], reader.scan_schema(native_path))  # type: ignore[redundant-cast]
+            return cast(dict[str, str], reader.scan_schema(native_path))
     except RuntimeError as e:
         raise CsvReadError(str(e)) from e
 

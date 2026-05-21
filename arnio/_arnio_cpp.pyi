@@ -80,6 +80,7 @@ class CsvConfig:
     delimiter: str
     has_header: bool
     encoding: str
+    encoding_errors: str
     trim_headers: bool
     thousands_separator: str | None
     mode: str
@@ -101,7 +102,7 @@ class CsvChunkReader:
 class CsvReader:
     def __init__(self, config: CsvConfig) -> None: ...
     def read(self, path: str) -> Frame: ...
-    def scan_schema(self, path: str) -> dict[str, str]: ...
+    def scan_schema(self, path: str) -> Mapping[str, str]: ...
 
 class CsvWriteConfig:
     delimiter: str
