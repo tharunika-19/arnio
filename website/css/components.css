@@ -574,12 +574,12 @@ pre:hover .copy-btn {
 }
 
 /* Dark mode */
-.dark .comparison-old {
+[data-theme="dark"] .comparison-old {
   border-color: var(--color-danger-border-dark, rgba(239, 68, 68, 0.35));
   background-color: var(--color-danger-subtle-dark, rgba(239, 68, 68, 0.08));
 }
 
-.dark .comparison-new {
+[data-theme="dark"] .comparison-new {
   border-color: var(--color-accent-border-dark, rgba(59, 130, 246, 0.45));
   background-color: var(--color-accent-subtle-dark, rgba(59, 130, 246, 0.08));
 }
